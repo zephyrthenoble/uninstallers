@@ -1,5 +1,5 @@
 #!/bin/bash
-sudo apt-get --purge remove postgresql
+apt-get purge $(dpkg -l | grep postgres | cut -f2); sudo apt-get autoremove;
 rm -r /etc/postgresql/
 rm -r /etc/postgresql-common/
 rm -r /var/lib/postgresql/
